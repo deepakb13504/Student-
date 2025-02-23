@@ -3,11 +3,11 @@ import mongoose from "mongoose";
 const studentSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true, // ✅ Fixed typo
+    required: true, 
   },
   dob: {
-    type: String, // ✅ Fixed typo (was `typr`)
-    required: true, // ✅ Fixed typo (was `require`)
+    type: String, 
+    required: true, 
   },
   age: {
     type: Number,
@@ -27,10 +27,10 @@ const studentSchema = new mongoose.Schema({
   },
   phoneNumber: {
     type: String,
-    required: false, // This can be optional
+    required: false, 
   },
 });
 
-const Student = mongoose.model("Student", studentSchema); // ✅ Fixed reference
+const Student = mongoose.model("Student", studentSchema);
 
 export default Student;
