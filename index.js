@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
-// Fix: Route path should start with "/"
+
 app.use("/student", student);
 
 if (!MONGO_URI) {
