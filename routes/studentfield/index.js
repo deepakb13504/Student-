@@ -1,9 +1,8 @@
 import { Router } from "express";
-import Student from "../../models/student.js"; // Ensure correct import path
+import Student from "../../models/student.js"; 
 
 const router = Router();
 
-// Create a new student
 router.post("/post", async (req, res) => {
   try {
     const student = new Student(req.body);
@@ -14,7 +13,7 @@ router.post("/post", async (req, res) => {
   }
 });
 
-// Get all students
+
 router.get("/get", async (req, res) => {
   try {
     const students = await Student.find();
@@ -23,8 +22,6 @@ router.get("/get", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
-// Update a student by ID
 router.put("/put/:id", async (req, res) => {
   try {
     const student = await Student.findByIdAndUpdate(req.params.id, req.body, {
@@ -42,7 +39,6 @@ router.put("/put/:id", async (req, res) => {
   }
 });
 
-// Delete a student by ID
 router.delete("/delete/:id", async (req, res) => {
   try {
     const student = await Student.findByIdAndDelete(req.params.id);
